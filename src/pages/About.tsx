@@ -3,6 +3,7 @@ import AboutSection from "@/components/AboutSection";
 import TechStackSection from "@/components/TechStackSection";
 import AcademicSection from "@/components/AcademicSection";
 import TestimonialSection from "@/components/TestimonialSection";
+import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
 const About = () => {
@@ -14,6 +15,7 @@ const About = () => {
         <TechStackSection />
         <AcademicSection />
         <TestimonialSection />
+        <CTASection />
       </div>
       <Footer />
     </div>

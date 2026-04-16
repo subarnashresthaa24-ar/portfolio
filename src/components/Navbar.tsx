@@ -23,37 +23,38 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-card/80 backdrop-blur-lg shadow-sm border-b border-border"
+          ? "bg-card/90 backdrop-blur-lg shadow-sm border-b border-border"
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
-        <Link to="/" className="font-heading text-xl font-bold text-foreground">
-          Dev<span className="text-primary">Portfolio</span>
+      <div className="container mx-auto flex items-center justify-between py-5 px-4 md:px-8">
+        <Link to="/" className="font-heading text-lg font-bold text-foreground">
+          DevPortfolio
         </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           {navLinks.map(({ label, to }) => (
             <Link
               key={to}
               to={to}
               className={`text-sm font-medium transition-colors duration-200 ${
                 location.pathname === to
-                  ? "text-primary"
+                  ? "text-foreground font-semibold underline underline-offset-4 decoration-2"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {label}
             </Link>
           ))}
-          <Link
-            to="/contact"
-            className="inline-flex items-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:opacity-90"
-          >
-            Resume
-          </Link>
         </div>
+
+        <Link
+          to="/contact"
+          className="hidden md:inline-flex items-center rounded-lg bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition-all duration-200 hover:opacity-90"
+        >
+          Resume
+        </Link>
 
         {/* Mobile toggle */}
         <button
@@ -76,7 +77,7 @@ const Navbar = () => {
               to={to}
               onClick={() => setMobileOpen(false)}
               className={`block py-3 text-sm font-medium ${
-                location.pathname === to ? "text-primary" : "text-muted-foreground"
+                location.pathname === to ? "text-foreground font-semibold" : "text-muted-foreground"
               }`}
             >
               {label}
@@ -85,7 +86,7 @@ const Navbar = () => {
           <Link
             to="/contact"
             onClick={() => setMobileOpen(false)}
-            className="inline-flex mt-2 items-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground"
+            className="inline-flex mt-2 items-center rounded-lg bg-foreground px-5 py-2.5 text-sm font-semibold text-background"
           >
             Resume
           </Link>
