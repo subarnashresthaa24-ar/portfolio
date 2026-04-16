@@ -1,41 +1,22 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Projects", href: "#projects" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", to: "/" },
+  { label: "Projects", to: "/projects" },
+  { label: "About", to: "/about" },
+  { label: "Contact", to: "/contact" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    navLinks.forEach(({ href }) => {
-      const el = document.querySelector(href);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
   }, []);
 
   return (
@@ -47,31 +28,31 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
-        <a href="#home" className="font-heading text-xl font-bold text-foreground">
+        <Link to="/" className="font-heading text-xl font-bold text-foreground">
           Dev<span className="text-primary">Portfolio</span>
-        </a>
+        </Link>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map(({ label, href }) => (
-            <a
-              key={href}
-              href={href}
+          {navLinks.map(({ label, to }) => (
+            <Link
+              key={to}
+              to={to}
               className={`text-sm font-medium transition-colors duration-200 ${
-                activeSection === href.slice(1)
+                location.pathname === to
                   ? "text-primary"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="inline-flex items-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:opacity-90"
           >
             Resume
-          </a>
+          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -89,25 +70,25 @@ const Navbar = () => {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden bg-card/95 backdrop-blur-lg border-b border-border px-4 pb-4">
-          {navLinks.map(({ label, href }) => (
-            <a
-              key={href}
-              href={href}
+          {navLinks.map(({ label, to }) => (
+            <Link
+              key={to}
+              to={to}
               onClick={() => setMobileOpen(false)}
               className={`block py-3 text-sm font-medium ${
-                activeSection === href.slice(1) ? "text-primary" : "text-muted-foreground"
+                location.pathname === to ? "text-primary" : "text-muted-foreground"
               }`}
             >
               {label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             onClick={() => setMobileOpen(false)}
             className="inline-flex mt-2 items-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground"
           >
             Resume
-          </a>
+          </Link>
         </div>
       )}
     </nav>
