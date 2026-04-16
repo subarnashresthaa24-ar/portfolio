@@ -1,36 +1,28 @@
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
-
-const socials = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Mail, href: "mailto:subarna@example.com", label: "Email" },
-];
-
 const Footer = () => {
-  return (
-    <footer className="py-8 border-t border-border">
-      <div className="container mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <a href="#home" className="font-heading text-lg font-bold text-foreground">
-          Dev<span className="text-primary">Portfolio</span>
-        </a>
+  const links = [
+    { label: "GitHub", href: "#" },
+    { label: "LinkedIn", href: "#" },
+    { label: "Twitter", href: "#" },
+    { label: "Email", href: "mailto:subarnashrestha0000@gmail.com" },
+  ];
 
-        <div className="flex items-center gap-4">
-          {socials.map(({ icon: Icon, href, label }) => (
+  return (
+    <footer className="py-8 border-t border-border bg-secondary/50">
+      <div className="container mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p className="text-sm text-muted-foreground">
+          © 2024 Subarna Shrestha. All rights reserved.
+        </p>
+        <div className="flex items-center gap-6">
+          {links.map(({ label, href }) => (
             <a
               key={label}
               href={href}
-              aria-label={label}
-              className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground transition-colors duration-200 hover:bg-primary hover:text-primary-foreground"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
-              <Icon className="w-4 h-4" />
+              {label}
             </a>
           ))}
         </div>
-
-        <p className="text-sm text-muted-foreground">
-          © 2024 Subarna Shrestha
-        </p>
       </div>
     </footer>
   );
