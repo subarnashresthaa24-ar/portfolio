@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import profileImg from "@/assets/profile.jpg";
 
 const HeroSection = () => {
@@ -20,18 +21,18 @@ const HeroSection = () => {
               Dedicated to building precise, efficient, and user-centric digital experiences.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a
-                href="#projects"
+              <Link
+                to="/projects"
                 className="inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:opacity-90"
               >
                 View My Work
-              </a>
-              <a
-                href="#contact"
+              </Link>
+              <Link
+                to="/contact"
                 className="inline-flex items-center rounded-full border-2 border-border px-6 py-3 text-sm font-semibold text-foreground transition-all duration-200 hover:border-primary hover:text-primary"
               >
                 Contact Me
-              </a>
+              </Link>
             </div>
           </div>
 
