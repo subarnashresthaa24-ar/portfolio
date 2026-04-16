@@ -7,12 +7,12 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="py-8 border-t border-border bg-secondary/50">
+    <footer className="py-8 border-t border-border">
       <div className="container mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-muted-foreground">
-          © 2024 Subarna Shrestha. All rights reserved.
+        <p className="font-heading text-sm font-bold text-foreground">
+          DevPortfolio
         </p>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-8">
           {links.map(({ label, href }) => (
             <a
               key={label}
@@ -23,6 +23,9 @@ const Footer = () => {
             </a>
           ))}
         </div>
+        <p className="text-sm text-muted-foreground">
+          © 2024 Software Architect. Built with Precision.
+        </p>
       </div>
     </footer>
   );
