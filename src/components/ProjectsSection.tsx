@@ -77,10 +77,10 @@ const ProjectsSection = () => {
               Watch Ecommerce
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              Responsive storefront featuring an immersive catalog, shopping cart logic, and streamlined checkout experience using vanilla JS.
+              Responsive storefront featuring an immersive catalog and shopping cart logic.
             </p>
             <p className="text-xs text-muted-foreground">
-              HTML5 • Tailwind • JS
+              HTML5 • CSS • JS
             </p>
           </div>
         </div>
@@ -95,7 +95,7 @@ const ProjectsSection = () => {
               Mart Billing System
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Scalable backend architecture designed for high-velocity retail environments. Focused on transactional integrity, real-time inventory synchronization, and automated sales reporting.
+              Scalable backend architecture designed for high-velocity retail environments. Focused on transactional integrity, real-time inventory synchronization, and automated sales reporting using python.
             </p>
             <div className="flex gap-3">
               <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-card border border-border">

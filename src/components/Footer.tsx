@@ -1,7 +1,7 @@
 const Footer = () => {
   const links = [
     { label: "GitHub", href: "#" },
-    { label: "LinkedIn", href: "#" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/subarna-shrestha18" },
     { label: "Twitter", href: "#" },
     { label: "Email", href: "mailto:subarnashrestha0000@gmail.com" },
   ];

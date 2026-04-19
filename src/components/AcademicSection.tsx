@@ -2,13 +2,13 @@ import { GraduationCap } from "lucide-react";
 
 const timeline = [
   {
-    year: "2023",
+    year: "2024",
     degree: "Bsc Computing",
-    institution: "Informatics College",
+    institution: "Informatics College Pokhara",
     description: "Specialized in Advanced Programming and Systems Design. Developed a deep understanding of computational theory and software lifecycle management.",
   },
   {
-    year: "2020",
+    year: "2022",
     degree: "Diploma in Computer Engineering",
     institution: "Pokhara Engineering College",
     description: "A foundational dive into hardware-software integration, networking, and the fundamentals of engineering logic.",
@@ -41,8 +41,8 @@ const AcademicSection = () => {
                   )}
                 </div>
                 <div className="pb-12">
-                  <p className="text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-2">
-                    GRADUATED {item.year}
+                 <p className="text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-2">
+                     {item.degree === "Bsc Computing" ? item.year : `GRADUATED ${item.year}`}
                   </p>
                   <h3 className="font-heading text-xl font-bold text-foreground mb-1">
                     {item.degree}

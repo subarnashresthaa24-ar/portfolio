@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import profileImg from "@/assets/profile.jpg";
+import profileImg from "@/assets/ProfileImage.jpg";
 
 const HeroSection = () => {
   return (
