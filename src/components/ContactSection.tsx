@@ -27,7 +27,6 @@ const ContactSection = () => {
 
   const contactInfo = [
     { icon: Mail, label: "EMAIL ME", value: "subarnashrestha0000@gmail.com", href: "mailto:subarnashrestha0000@gmail.com" },
-    { icon: Phone, label: "CALL ME", value: "+977 9829148565", href: "tel:+9779829148565" },
   ];
 
   return (
